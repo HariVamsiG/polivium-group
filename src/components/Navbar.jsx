@@ -3,11 +3,7 @@ import s from './Navbar.module.css'
 
 const NAV = [
   { label: 'Home', key: 'home' },
-  { label: 'About Us', key: 'about', sub: [
-    { label: 'About Polivium', key: 'about' },
-    { label: 'Our Values', key: 'about' },
-    { label: 'Our Team', key: 'about' },
-  ]},
+  { label: 'About Us', key: 'about' },
   { label: 'Services', key: 'services', sub: [
     { label: 'All Solutions', key: 'services' },
     { label: 'EPC Services', key: 'epc' },
@@ -17,7 +13,7 @@ const NAV = [
     { label: 'Green Hydrogen', key: 'ni_hydrogen' },
     { label: 'CBG Plants', key: 'ni_cbg' },
   ]},
-  { label: '☀ Solar Calculator', key: 'calculator' },
+  { label: '☀ Savings Calculator', key: 'calculator' },
   { label: 'Contact', key: 'contact' },
 ]
 
@@ -37,7 +33,7 @@ export default function Navbar({ setPage, currentPage }) {
   return (
     <nav className={`${s.nav} ${scrolled ? s.scrolled : ''}`}>
       <div className={s.inner}>
-        <img src="/images/logo.png" alt="Polivium" className={s.logo} onClick={() => go('home')} />
+        <img src={scrolled ? "/images/logo.png" : "/images/logo-white.png"} alt="Polivium" className={s.logo} onClick={() => go('home')} />
         <ul className={`${s.links} ${open ? s.open : ''}`}>
           {NAV.map(item => (
             <li key={item.label} className={s.item}>

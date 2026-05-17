@@ -1,8 +1,8 @@
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .35s ease;background:transparent}
 .nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);box-shadow:0 2px 24px rgba(10,53,116,.06);padding:8px 0}
 .inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
-.logo{cursor:pointer;height:65px;width:auto;object-fit:contain;transition:all .3s ease;border-radius:8px;background:rgba(255,255,255,.4);padding:4px 10px}
-.nav.scrolled .logo{height:46px;background:transparent;padding:4px 0}
+.logo{cursor:pointer;height:65px;width:auto;object-fit:contain;transition:all .3s ease;border-radius:8px}
+.nav.scrolled .logo{height:46px}
 .links{display:flex;align-items:center;gap:4px}
 .item{position:relative}
 .link{padding:10px 14px;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.9);border-radius:8px;transition:all .2s;display:flex;align-items:center;gap:4px;white-space:nowrap}

@@ -1,4 +1,12 @@
+import { useState, useEffect } from 'react'
 import s from './Home.module.css'
+
+const VIDEOS = [
+  '/videos/intro-one.mp4',
+  '/videos/intro-two.mp4',
+  '/videos/intro-three.mp4',
+  '/videos/intro-four.mp4',
+]
 
 const STATS = [
   { val: '500MW+', label: 'Capacity Installed' },
@@ -25,21 +33,36 @@ const TESTIMONIALS = [
 const PARTNERS = ['Amplus Solar','Greenko','GPREC','Enrich Energy','GRIP Invest','JNTU Hyderabad','KITS','NCC','Radisson','Rewatt','Snowman Logistics','Synergy']
 
 export default function Home({ setPage }) {
+  const [vidIdx, setVidIdx] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setVidIdx(i => (i + 1) % VIDEOS.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <>
       <section className={s.hero}>
-        <div className={s.heroBg}/>
+        {VIDEOS.map((v, i) => (
+          <video key={i} className={`${s.heroVideo} ${i === vidIdx ? s.videoActive : ''}`} muted autoPlay playsInline loop>
+            <source src={v} type="video/mp4" />
+          </video>
+        ))}
+        <div className={s.heroOverlay}/>
         <div className={s.heroInner}>
           <div className={`${s.heroBadge} badge badge--light`}>● India's Trusted Solar EPC Partner</div>
           <h1 className={s.heroTitle}>Powering India's Future with <span>Clean Energy</span></h1>
           <p className={s.heroSub}>End-to-end solar EPC for industries, businesses & governments. Cut energy bills up to 70% with India's trusted clean-tech partner.</p>
           <div className={s.heroBtns}>
-            <button className="btn btn--primary" onClick={() => setPage('contact')}>Get Free Consultation →</button>
-            <button className="btn btn--white" onClick={() => setPage('calculator')}>☀ Solar Calculator</button>
+            <button className="btn btn--primary" onClick={() => setPage('services')}>Explore Solutions →</button>
+            <button className="btn btn--white" onClick={() => setPage('calculator')}>☀ Savings Calculator</button>
           </div>
         </div>
       </section>
 
+      {/*
       <section className={s.stats}>
         <div className={s.statsGrid}>
           {STATS.map(st => (
@@ -50,6 +73,7 @@ export default function Home({ setPage }) {
           ))}
         </div>
       </section>
+      */}
 
       <section className="section">
         <div className={s.about}>
@@ -87,6 +111,7 @@ export default function Home({ setPage }) {
         </div>
       </section>
 
+      {/*
       <section className="section">
         <div className={s.testimonials}>
           <div className={s.testHead}>
@@ -109,6 +134,7 @@ export default function Home({ setPage }) {
           {[...PARTNERS,...PARTNERS].map((p,i) => <div key={i} className={s.partnerItem}>{p}</div>)}
         </div>
       </section>
+      */}
 
       <section className="section section--dark">
         <div className={s.cta}>

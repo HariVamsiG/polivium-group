@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import WhatsApp from './components/WhatsApp'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
+import EPC from './pages/EPC'
+import SolutionDetail from './pages/SolutionDetail'
 import Calculator from './pages/Calculator'
 import Financing from './pages/Financing'
 import AssetManagement from './pages/AssetManagement'
@@ -18,7 +21,7 @@ import Warranty from './pages/Warranty'
 const PAGES = {
   home: Home, about: About, services: Services,
   calculator: Calculator, financing: Financing, assetmanagement: AssetManagement,
-  epc: Services,
+  epc: EPC,
   initiatives: Initiatives, ni_hydrogen: Hydrogen, ni_cbg: CBG,
   contact: Contact, terms: Terms, privacy: Privacy, warranty: Warranty,
 }
@@ -36,13 +39,20 @@ export default function App() {
     return () => obs.disconnect()
   })
 
-  const Page = PAGES[page] || Home
+  const Page = PAGES[page] || null
+  const isSolution = page.startsWith('sol_')
 
   return (
     <>
       <Navbar setPage={navigate} currentPage={page} />
-      <main><Page setPage={navigate} /></main>
+      <main>
+        {isSolution
+          ? <SolutionDetail setPage={navigate} solutionKey={page} />
+          : Page ? <Page setPage={navigate} /> : <Home setPage={navigate} />
+        }
+      </main>
       <Footer setPage={navigate} />
+      <WhatsApp />
     </>
   )
 }

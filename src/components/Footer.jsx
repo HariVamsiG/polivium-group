@@ -6,7 +6,7 @@ export default function Footer({ setPage }) {
       <div className={s.top}>
         <div className={s.grid}>
           <div>
-            <img src="/images/logo.png" alt="Polivium" style={{height:48,borderRadius:4,marginBottom:16}} />
+            <img src="/images/logo-white.png" alt="Polivium" style={{height:48,borderRadius:4,marginBottom:16}} />
             <p className={s.desc}>End-to-end Solar EPC for industries, businesses & governments. Trust • Energy • Creativity • Execution.</p>
           </div>
           <div>
@@ -26,8 +26,8 @@ export default function Footer({ setPage }) {
           </div>
           <div>
             <h4 className={s.heading}>Contact</h4>
-            <p>✉ info@polivium.com</p>
-            <p>☎ +91 9010100808</p>
+            <p>✉ info@poliviumgroup.com</p>
+            <p>☎ +91 755 017 0694</p>
             <p>📍 Hyderabad, India</p>
           </div>
         </div>

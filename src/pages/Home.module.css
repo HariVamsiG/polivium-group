@@ -1,7 +1,8 @@
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-.heroBg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80') center/cover no-repeat}
-.heroBg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,37,84,.88) 0%,rgba(14,86,175,.75) 50%,rgba(11,109,136,.7) 100%)}
-.heroInner{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:160px 24px 100px}
+.heroVideo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity 1.2s ease}
+.videoActive{opacity:1}
+.heroOverlay{position:absolute;inset:0;background:rgba(0,0,0,.45);z-index:1}
+.heroInner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:160px 24px 100px}
 .heroBadge{margin-bottom:24px}
 .heroTitle{font-size:clamp(2.8rem,5.5vw,4.2rem);font-weight:800;color:#fff;line-height:1.08;max-width:700px}
 .heroTitle span{background:linear-gradient(135deg,var(--a400),var(--a500));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
