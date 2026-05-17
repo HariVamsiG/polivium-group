@@ -1,0 +1,14 @@
+.footer{background:var(--n900)}
+.top{padding:72px 24px 48px;max-width:1200px;margin:0 auto}
+.grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px}
+.desc{color:rgba(255,255,255,.6);font-size:14px;line-height:1.7;max-width:280px}
+.heading{color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.grid div button,.grid div p{display:block;background:none;border:none;color:rgba(255,255,255,.55);font-size:14px;padding:4px 0;transition:color .2s;text-align:left;cursor:pointer}
+.grid div button:hover{color:var(--a400)}
+.bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 24px;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.bottom p{color:rgba(255,255,255,.4);font-size:13px}
+.legal{display:flex;gap:20px}
+.legal button{background:none;border:none;color:rgba(255,255,255,.4);font-size:13px;cursor:pointer;transition:color .2s}
+.legal button:hover{color:var(--a400)}
+@media(max-width:768px){.grid{grid-template-columns:1fr 1fr;gap:32px}.bottom{flex-direction:column;text-align:center}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}}
