@@ -7,7 +7,7 @@ export default function Footer({ setPage }) {
         <div className={s.grid}>
           <div>
             <img src="/images/logo-white.png" alt="Polivium" style={{height:48,borderRadius:4,marginBottom:16}} />
-            <p className={s.desc}>End-to-end Solar EPC for industries, businesses & governments. Trust • Energy • Creativity • Execution.</p>
+            <p className={s.desc}>End-to-end Solar EPC for industries, businesses & governments.<br/> Trust • Energy • Creativity • Execution.</p>
           </div>
           <div>
             <h4 className={s.heading}>Company</h4>
@@ -19,7 +19,7 @@ export default function Footer({ setPage }) {
           <div>
             <h4 className={s.heading}>Solutions</h4>
             <button onClick={()=>setPage('financing')}>Financing</button>
-            <button onClick={()=>setPage('assetmanagement')}>Asset Management</button>
+            <button onClick={()=>setPage('assetmanagement')}>Operations & Maintenance</button>
             <button onClick={()=>setPage('calculator')}>Solar Calculator</button>
             <button onClick={()=>setPage('ni_hydrogen')}>Green Hydrogen</button>
             <button onClick={()=>setPage('ni_cbg')}>CBG Plants</button>
@@ -28,12 +28,12 @@ export default function Footer({ setPage }) {
             <h4 className={s.heading}>Contact</h4>
             <p>✉ info@poliviumgroup.com</p>
             <p>☎ +91 755 017 0694</p>
-            <p>📍 Hyderabad, India</p>
+            <p>📍 <a href="https://maps.app.goo.gl/kTJDbW1cpNns3NQdA?g_st=aw" target="_blank" rel="noopener noreferrer" style={{color:'inherit'}}>Ongole, India</a></p>
           </div>
         </div>
       </div>
       <div className={s.bottom}>
-        <p>© 2017 Polivium Group Private Limited. All Rights Reserved.</p>
+        <p>© 2026 Polivium Group Private Limited. All Rights Reserved.</p>
         <div className={s.legal}>
           <button onClick={()=>setPage('terms')}>Terms</button>
           <button onClick={()=>setPage('privacy')}>Privacy</button>

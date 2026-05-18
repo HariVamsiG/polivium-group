@@ -3,37 +3,33 @@ import s from './Home.module.css'
 
 const VIDEOS = [
   '/videos/intro-one.mp4',
-  '/videos/intro-two.mp4',
+  '/videos/Intro-two.mp4',
   '/videos/intro-three.mp4',
   '/videos/intro-four.mp4',
 ]
 
-const STATS = [
-  { val: '500MW+', label: 'Capacity Installed' },
-  { val: '200+', label: 'Projects Delivered' },
-  { val: '70%', label: 'Energy Bill Savings' },
-  { val: '15+', label: 'States Covered' },
+const SOLUTIONS = [
+  { key:'sol_rooftop', title:'Rooftop Solar', desc:'Commercial & industrial rooftop installations from 25 kW to 5 MW.', img:'/images/Rooftop_Solar.jpg' },
+  { key:'sol_ground', title:'Ground Mounted Solar', desc:'Large-scale ground-mount solar farms for captive consumption.', img:'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&q=80' },
+  { key:'sol_park', title:'Solar Park', desc:'Utility-scale solar parks from 5 MW to 100MW+ for PSUs and IPPs.', img:'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=500&q=80' },
+  { key:'sol_bess', title:'Battery Energy Storage', desc:'Grid-scale BESS for peak shaving and energy arbitrage.', img:'/images/BESS.jpeg' },
+  { key:'sol_floating', title:'Floating Solar', desc:'FPV systems for reservoirs and water bodies.', img:'/images/Floating_Solar.jpg' },
+  { key:'sol_carport', title:'Solar Carport', desc:'Solar-powered parking structures for campuses.', img:'/images/Solar_Carport.jpg' },
+  { key:'sol_hybrid', title:'Hybrid Solar & Wind', desc:'Combined systems for 24/7 renewable generation.', img:'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=500&q=80' },
+  { key:'sol_substation', title:'Sub-Stations', desc:'Switchyards and substations up to 400 kV.', img:'/images/Substation.jpg' },
+  { key:'sol_wind', title:'Wind Turbine', desc:'Onshore wind energy projects end-to-end.', img:'/images/Wind-Turbines.jpg' },
 ]
 
 const SERVICES = [
-  { icon: '⚡', title: 'Commercial Solar', desc: '25 kW–5 MW rooftop & ground-mount systems for businesses.', bg: 'var(--p50)' },
-  { icon: '🏭', title: 'Industrial Solar', desc: '5–100 MW utility-scale solar parks for heavy industry.', bg: 'var(--s50,#edfcfe)' },
-  { icon: '🏛️', title: 'Government Projects', desc: '100MW+ solar installations for public sector undertakings.', bg: '#fff8eb' },
-  { icon: '🔋', title: 'Energy Storage', desc: 'Grid-scale BESS for peak shaving and energy arbitrage.', bg: 'var(--p50)' },
-  { icon: '💧', title: 'Green Hydrogen', desc: 'Electrolyser-based green hydrogen production facilities.', bg: 'var(--s50,#edfcfe)' },
-  { icon: '♻️', title: 'CBG Plants', desc: 'Compressed Biogas plants from organic waste feedstock.', bg: '#f0fdf4' },
+  { title: 'EPC Services', desc: 'Engineering, Procurement & Construction — complete project delivery.', key: 'epc' },
+  { title: 'Financing Models', desc: 'CAPEX / Leasing / OPEX / PPA / RESCO — flexible financing.', key: 'financing' },
+  { title: 'Operations & Maintenance', desc: '24/7 monitoring, preventive maintenance, and optimization.', key: 'assetmanagement' },
+  { title: 'New Initiatives', desc: 'CBG (Bio-CNG) Plants — next frontier of clean energy.', key: 'initiatives' },
 ]
-
-const TESTIMONIALS = [
-  { name: 'Ramesh K., CEO — Apex Industries', text: 'Polivium delivered our 2MW rooftop project ahead of schedule. Exceptional quality and professionalism throughout.' },
-  { name: 'Anita S., CFO — Greenfield Corp', text: 'The solar calculator helped us understand ROI clearly. We saved 68% on electricity bills from month one.' },
-  { name: 'Vikram P., Director — Sunrise Mfg', text: 'From financing to commissioning, Polivium handled everything. True end-to-end EPC partner.' },
-]
-
-const PARTNERS = ['Amplus Solar','Greenko','GPREC','Enrich Energy','GRIP Invest','JNTU Hyderabad','KITS','NCC','Radisson','Rewatt','Snowman Logistics','Synergy']
 
 export default function Home({ setPage }) {
   const [vidIdx, setVidIdx] = useState(0)
+  const [hoveredSol, setHoveredSol] = useState(null)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -42,8 +38,15 @@ export default function Home({ setPage }) {
     return () => clearInterval(timer)
   }, [])
 
+  // Preload both logos
+  useEffect(() => {
+    const img1 = new Image(); img1.src = '/images/logo-white.png'
+    const img2 = new Image(); img2.src = '/images/logo.png'
+  }, [])
+
   return (
     <>
+      {/* Hero */}
       <section className={s.hero}>
         {VIDEOS.map((v, i) => (
           <video key={i} className={`${s.heroVideo} ${i === vidIdx ? s.videoActive : ''}`} muted autoPlay playsInline loop>
@@ -62,85 +65,76 @@ export default function Home({ setPage }) {
         </div>
       </section>
 
-      {/*
-      <section className={s.stats}>
-        <div className={s.statsGrid}>
-          {STATS.map(st => (
-            <div key={st.label} className="reveal">
-              <div className={s.statVal}>{st.val}</div>
-              <div className={s.statLabel}>{st.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-      */}
-
+      {/* About */}
       <section className="section">
         <div className={s.about}>
-          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=80" alt="Solar installation" className={s.aboutImg}/>
+          <div style={{background:'linear-gradient(135deg,var(--p50),#fff)',borderRadius:24,overflow:'hidden',border:'1px solid var(--n200)',boxShadow:'var(--shadow-md)'}}>
+            <img src="/images/sun-logo-black.png" alt="Polivium" style={{width:'100%',display:'block'}}/>
+          </div>
           <div>
-            <div className={`${s.aboutBadge} badge badge--blue`}>● About Polivium</div>
-            <h2 className={s.aboutTitle}>Decentralising Energy Across India</h2>
+            <div className={`${s.aboutBadge} badge badge--blue`}>● About POLIVIUM</div>
+            <h2 className={s.aboutTitle}>A Diversified Emerging Enterprise</h2>
             <div className={s.aboutLine}/>
-            <p className={s.aboutText}>Polivium is dedicated to providing comprehensive solutions for solar energy — from engineering and procurement to construction and ongoing asset management. We ensure optimal performance and longevity of your solar energy systems.</p>
-            <p className={s.aboutText}>With 500MW+ installed capacity across 15+ states, we are India's trusted partner for clean energy transition. Our end-to-end approach covers financing, installation, monitoring, and maintenance.</p>
-            <button className="btn btn--primary" onClick={() => setPage('services')}>Our Services →</button>
+            <p className={s.aboutText}>POLIVIUM is a diversified emerging enterprise focused on building sustainable, technology-driven solutions across industrial, commercial, rural, and urban ecosystems. With a strong foundation in execution excellence, innovation, and long-term value creation, we aim to bridge infrastructure, energy, and business opportunities that contribute to inclusive growth.</p>
+            <p className={s.aboutText}>Driven by the principles of Trust, Energy, Creativity, and Execution, POLIVIUM is committed to developing impactful ventures that empower industries, strengthen communities, and support a smarter and more sustainable future.</p>
+            <button className="btn btn--primary" onClick={() => setPage('about')}>Learn More →</button>
           </div>
         </div>
       </section>
 
+      {/* Solutions */}
+      <section className="section section--light">
+        <div className="container">
+          <div className="text-center" style={{marginBottom:56}}>
+            <div className="badge badge--blue">● Our Solutions</div>
+            <h2 style={{fontSize:36,fontWeight:800,marginTop:14}}>Solar & Renewable Energy Solutions</h2>
+            <p style={{color:'var(--n500)',marginTop:10,maxWidth:520,margin:'10px auto 0'}}>From rooftop to utility-scale — comprehensive renewable energy solutions for every application.</p>
+          </div>
+          <div className={s.solGrid}>
+            {SOLUTIONS.map(sol => (
+              <div key={sol.key} className={s.solCard}
+                onMouseEnter={() => setHoveredSol(sol.key)}
+                onMouseLeave={() => setHoveredSol(null)}
+                onClick={() => setPage(sol.key)}>
+                <img src={sol.img} alt={sol.title} className={s.solImg} style={{transform: hoveredSol === sol.key ? 'scale(1.08)' : 'scale(1)'}} />
+                <div className={s.solOverlay}/>
+                <div className={s.solContent}>
+                  <h3>{sol.title}</h3>
+                  <p>{sol.desc}</p>
+                  <span className={s.solArrow}>→</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
       <section className="section section--light">
         <div className="container">
           <div className={s.servicesHead}>
-            <div className="badge badge--blue">● What We Do</div>
-            <h2>End-to-End Solar Solutions</h2>
-            <p>From rooftop to utility-scale — engineering, financing, and operations under one roof.</p>
+            <div className="badge badge--blue">● Our Services</div>
+            <h2>End-to-End Service Offerings</h2>
+            <p>Engineering, financing, and operations under one roof.</p>
           </div>
-          <div className="grid grid--3">
+          <div className="grid grid--4">
             {SERVICES.map(sv => (
-              <div key={sv.title} className={`card ${s.serviceCard} reveal`}>
-                <div className={s.serviceIcon} style={{background:sv.bg}}>{sv.icon}</div>
-                <h3>{sv.title}</h3>
-                <p>{sv.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center" style={{marginTop:48}}>
-            <button className="btn btn--primary" onClick={() => setPage('services')}>View All Services →</button>
-          </div>
-        </div>
-      </section>
-
-      {/*
-      <section className="section">
-        <div className={s.testimonials}>
-          <div className={s.testHead}>
-            <div className="badge badge--blue">● Testimonials</div>
-            <h2>What Our Clients Say</h2>
-          </div>
-          <div className="grid grid--3">
-            {TESTIMONIALS.map(t => (
-              <div key={t.name} className={`card ${s.testCard} reveal`}>
-                <p>"{t.text}"</p>
-                <strong>{t.name}</strong>
+              <div key={sv.title} className="card reveal" style={{padding:28,cursor:'pointer',textAlign:'center'}} onClick={() => setPage(sv.key)}>
+                <h3 style={{fontSize:16,fontWeight:700,marginBottom:8}}>{sv.title}</h3>
+                <p style={{color:'var(--n500)',fontSize:13,lineHeight:1.7}}>{sv.desc}</p>
+                <span style={{display:'inline-block',marginTop:14,color:'var(--p600)',fontSize:13,fontWeight:600}}>Learn More →</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className={s.partners}>
-        <div className={s.partnersTrack}>
-          {[...PARTNERS,...PARTNERS].map((p,i) => <div key={i} className={s.partnerItem}>{p}</div>)}
-        </div>
-      </section>
-      */}
-
-      <section className="section section--dark">
-        <div className={s.cta}>
-          <h2>Ready to Go Solar?</h2>
-          <p>Get a free consultation and discover how much you can save with Polivium.</p>
-          <div className={s.ctaBtns}>
+      {/* CTA */}
+      <section className="section" style={{background:'linear-gradient(135deg,var(--p700),var(--p900))',textAlign:'center'}}>
+        <div className="container">
+          <h2 style={{fontSize:36,fontWeight:800,color:'#fff'}}>Ready to Go Solar?</h2>
+          <p style={{color:'rgba(255,255,255,.7)',marginTop:12,fontSize:16}}>Get a free consultation and discover how much you can save with Polivium.</p>
+          <div style={{display:'flex',gap:16,justifyContent:'center',flexWrap:'wrap',marginTop:28}}>
             <button className="btn btn--white" onClick={() => setPage('contact')}>Contact Us</button>
             <button className="btn btn--accent" onClick={() => setPage('calculator')}>☀ Calculate Savings</button>
           </div>

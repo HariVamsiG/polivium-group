@@ -46,6 +46,20 @@
 .ctaBtns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
 @keyframes marquee{0%{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.solGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.solCard{position:relative;border-radius:16px;overflow:hidden;height:260px;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.solCard:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.3)}
+.solImg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.solOverlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 50%,transparent 100%);transition:background .3s}
+.solCard:hover .solOverlay{background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.4) 60%,rgba(0,0,0,.1) 100%)}
+.solContent{position:absolute;bottom:0;left:0;right:0;padding:24px;z-index:1}
+.solContent h3{color:#fff;font-size:17px;font-weight:700;margin-bottom:6px}
+.solContent p{color:rgba(255,255,255,.7);font-size:12.5px;line-height:1.6;max-height:0;overflow:hidden;transition:max-height .3s ease,opacity .3s;opacity:0}
+.solCard:hover .solContent p{max-height:60px;opacity:1}
+.solArrow{display:inline-block;color:var(--a400);font-size:18px;font-weight:700;margin-top:8px;opacity:0;transform:translateX(-8px);transition:all .3s}
+.solCard:hover .solArrow{opacity:1;transform:translateX(0)}
+
 @media(max-width:768px){
   .statsGrid{grid-template-columns:repeat(2,1fr)}
   .about{grid-template-columns:1fr;gap:40px}
@@ -55,4 +69,9 @@
   .heroSub{font-size:16px}
   .heroBtns{flex-direction:column;align-items:stretch}
   .heroBtns button{width:100%;justify-content:center}
+  .solGrid{grid-template-columns:1fr 1fr}
+  .solCard{height:200px}
+}
+@media(max-width:480px){
+  .solGrid{grid-template-columns:1fr}
 }

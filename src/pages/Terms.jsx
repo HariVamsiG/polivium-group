@@ -1,7 +1,7 @@
 import PageHeader from '../components/PageHeader'
 
 const DATA = [
-  {t:'Definitions & Interpretation',c:'These Terms govern your use of Polivium Group services including solar EPC, asset management, and related offerings.'},
+  {t:'Definitions & Interpretation',c:'These Terms govern your use of Polivium Group services including solar EPC, operations & maintenance, and related offerings.'},
   {t:'Scope of Services',c:'Polivium provides end-to-end solar EPC services including engineering, procurement, construction, financing facilitation, and O&M.'},
   {t:'Payment Terms',c:'Payment schedules are defined in individual project contracts. Standard terms include milestone-based payments aligned with project progress.'},
   {t:'Warranties & Guarantees',c:'All installations carry manufacturer warranties on equipment and Polivium workmanship guarantee as specified in the project agreement.'},

@@ -12,7 +12,7 @@ const DATA = [
 export default function AssetManagement({ setPage }) {
   return (
     <>
-      <PageHeader badge="O&M Excellence" title="Solar Asset Management" subtitle="Ensuring optimal performance and longevity of your solar energy systems." />
+      <PageHeader badge="O&M Excellence" title="Operations & Maintenance" subtitle="Ensuring optimal performance and longevity of your solar energy systems." />
       <section className="section">
         <div className="container">
           <div className="grid grid--3">

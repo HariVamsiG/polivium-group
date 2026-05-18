@@ -15,8 +15,8 @@ export default function About({ setPage }) {
       <section className="section">
         <div className="container">
           <div className="grid grid--2" style={{alignItems:'center',gap:60}}>
-            <div style={{background:'linear-gradient(135deg,var(--p50),#fff)',borderRadius:24,padding:48,display:'flex',alignItems:'center',justifyContent:'center',border:'1px solid var(--n200)',boxShadow:'var(--shadow-md)'}}>
-              <img src="/images/sun-logo-black.png" alt="Polivium" style={{width:'100%',maxWidth:320,height:'auto',objectFit:'contain'}} />
+            <div style={{background:'linear-gradient(135deg,var(--p50),#fff)',borderRadius:24,overflow:'hidden',border:'1px solid var(--n200)',boxShadow:'var(--shadow-md)'}}>
+              <img src="/images/sun-logo-black.png" alt="Polivium" style={{width:'100%',height:'auto',display:'block'}} />
             </div>
             <div>
               <div className="badge badge--blue" style={{marginBottom:18}}>● About POLIVIUM</div>
