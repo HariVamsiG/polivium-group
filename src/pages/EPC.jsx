@@ -38,7 +38,7 @@ export default function EPC({ setPage }) {
                 ))}
               </div>
             </div>
-            <img src="https://solarsure.in/wp-content/uploads/2026/02/solarsure-blog-banners-2.jpg" alt="Solar EPC" className="reveal" style={{borderRadius:16,width:'100%',height:340,objectFit:'cover',boxShadow:'var(--shadow-lg)'}} />
+            <img src="/images/EPC.jpeg" alt="Solar EPC" className="reveal" style={{borderRadius:16,width:'100%',height:340,objectFit:'cover',boxShadow:'var(--shadow-lg)'}} />
           </div>
         </div>
       </section>
@@ -65,13 +65,6 @@ export default function EPC({ setPage }) {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Process Image */}
-      <section className="section">
-        <div className="container text-center">
-          <img src="https://solarsure.in/wp-content/uploads/2026/02/solarsure-blog-banners.jpg" alt="Solar EPC Process" style={{borderRadius:16,width:'100%',maxWidth:900,margin:'0 auto',boxShadow:'var(--shadow-md)'}} className="reveal" />
         </div>
       </section>
 

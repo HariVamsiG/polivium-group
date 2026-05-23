@@ -27,9 +27,28 @@ const PAGES = {
 }
 
 export default function App() {
-  const [page, setPage] = useState('home')
+  const [page, setPage] = useState(() => {
+    const path = window.location.pathname.replace(/^\//, '') || 'home'
+    return path
+  })
 
-  const navigate = (p) => { setPage(p); window.scrollTo(0, 0) }
+  const navigate = (p) => {
+    setPage(p)
+    window.history.pushState({ page: p }, '', `/${p === 'home' ? '' : p}`)
+    window.scrollTo(0, 0)
+  }
+
+  useEffect(() => {
+    const onPopState = (e) => {
+      const p = e.state?.page || window.location.pathname.replace(/^\//, '') || 'home'
+      setPage(p)
+      window.scrollTo(0, 0)
+    }
+    window.addEventListener('popstate', onPopState)
+    // Replace initial state so first page is in history
+    window.history.replaceState({ page }, '', `/${page === 'home' ? '' : page}`)
+    return () => window.removeEventListener('popstate', onPopState)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const obs = new IntersectionObserver(entries => {

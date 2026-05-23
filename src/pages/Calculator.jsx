@@ -22,14 +22,14 @@ export default function Calculator() {
     const units = bill / rate
     const kw = type === 'home'
       ? Math.max(1, parseFloat((units / 130).toFixed(1)))
-      : Math.max(3, parseFloat((units / 100 * 0.7).toFixed(1)))
+      : Math.max(3, parseFloat((units / 100 * 0.8).toFixed(1)))
     const annUnits = Math.round(kw * 1420)
     const annSav = Math.round(annUnits * rate)
     const area = Math.round(kw * 80)
     const base = Math.round(kw * (type === 'home' ? 70000 : 40000))
-        const subsidy = type === 'home'
-      ? kw < 2 ? 30000
-        : kw <3 ? 60000
+    const subsidy = type === 'home'
+      ? kw <= 1 ? 30000
+        : kw <= 2 ? 60000
         : 78000
       : 0
     const eff = Math.max(0, base - subsidy)
