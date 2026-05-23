@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react'
 import s from './Home.module.css'
 
 const VIDEOS = [
-  '/videos/intro-one.mp4',
-  '/videos/Intro-two.mp4',
-  '/videos/intro-three.mp4',
-  '/videos/intro-four.mp4',
+  '/videos/one.mp4',
+  '/videos/two.mp4',
+  '/videos/three.mp4',
+  '/videos/four.mp4',
+  '/videos/five.mp4',
 ]
 
 const SOLUTIONS = [

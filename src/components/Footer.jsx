@@ -21,7 +21,7 @@ export default function Footer({ setPage }) {
             <button onClick={()=>setPage('financing')}>Financing</button>
             <button onClick={()=>setPage('assetmanagement')}>Operations & Maintenance</button>
             <button onClick={()=>setPage('calculator')}>Solar Calculator</button>
-            <button onClick={()=>setPage('ni_hydrogen')}>Green Hydrogen</button>
+            {/* <button onClick={()=>setPage('ni_hydrogen')}>Green Hydrogen</button> */}
             <button onClick={()=>setPage('ni_cbg')}>CBG Plants</button>
           </div>
           <div>

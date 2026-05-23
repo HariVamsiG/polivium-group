@@ -22,14 +22,14 @@ export default function Calculator() {
     const units = bill / rate
     const kw = type === 'home'
       ? Math.max(1, parseFloat((units / 130).toFixed(1)))
-      : Math.max(3, parseFloat((units / 100 * 0.8).toFixed(1)))
+      : Math.max(3, parseFloat((units / 100 * 0.7).toFixed(1)))
     const annUnits = Math.round(kw * 1420)
     const annSav = Math.round(annUnits * rate)
     const area = Math.round(kw * 80)
     const base = Math.round(kw * (type === 'home' ? 70000 : 40000))
-    const subsidy = type === 'home'
-      ? kw <= 2 ? kw * 30000
-        : kw <= 3 ? (2 * 30000) + ((kw - 2) * 18000)
+        const subsidy = type === 'home'
+      ? kw < 2 ? 30000
+        : kw <3 ? 60000
         : 78000
       : 0
     const eff = Math.max(0, base - subsidy)
@@ -146,7 +146,7 @@ export default function Calculator() {
                   </span>
                 </div>
 
-                <p style={{color:'var(--n500)',fontSize:11.5}}>* Taxes & net-metering charges extra. PM Surya Ghar subsidy: ₹30,000/kW up to 2 kW, ₹18,000/kW for 2–3 kW, capped at ₹78,000 for 3 kW+. Commercial/Industrial not eligible. Estimates vary by location.</p>
+                <p style={{color:'var(--n500)',fontSize:11.5}}>* Taxes & net-metering charges extra. PM Surya Ghar subsidy: ₹30,000 for 1 kW, ₹60,000 for 2 kW, capped at ₹78,000 for 3 kW & above. Commercial/Industrial not eligible. Estimates vary by location.</p>
               </div>
             )}
           </div>
