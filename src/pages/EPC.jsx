@@ -1,12 +1,14 @@
 import PageHeader from '../components/PageHeader'
 
 const STEPS = [
-  { num: '01', title: 'Project Planning & Site Assessment', desc: 'Land survey, solar irradiance analysis, shadow study, and site feasibility. Determines optimal panel orientation, tilt angles, and row spacing.', icon: '📐' },
+  { num: '01', title: 'Feasibility Study', desc: 'Land survey, solar irradiance analysis, shadow study, topography mapping, and site feasibility report to determine project viability.', icon: '📐' },
   { num: '02', title: 'Design & Engineering', desc: 'Electrical design (string sizing, inverter selection, evacuation), structural engineering (foundations, wind load), and technology selection (TOPCon, bifacial, trackers).', icon: '✏️' },
-  { num: '03', title: 'Procurement', desc: 'Sourcing PV modules, inverters, transformers, cables, mounting structures. Includes vendor evaluation, quality checks, and factory inspections.', icon: '📦' },
-  { num: '04', title: 'Construction & Installation', desc: 'Site levelling, roads, mounting structures, module installation, DC/AC cabling, inverter & transformer installation with safety protocols.', icon: '🏗️' },
-  { num: '05', title: 'Testing & Commissioning', desc: 'String-level testing, inverter load testing, grid synchronisation. Requires Electrical Inspector, DISCOM, and CEIG approvals before going live.', icon: '⚡' },
-  { num: '06', title: 'Operations & Maintenance', desc: 'SCADA monitoring, preventive maintenance, fault diagnostics, cleaning schedules, and performance reporting for 25+ year plant life.', icon: '🛡️' },
+  { num: '03', title: 'Approval & Documentation', desc: 'Obtaining necessary clearances — DISCOM connectivity approval, land permits, environmental clearances, CEIG approvals, and net-metering sanctions.', icon: '📋' },
+  { num: '04', title: 'Procurement', desc: 'Sourcing PV modules, inverters, transformers, cables, mounting structures. Includes vendor evaluation, quality checks, and factory inspections.', icon: '📦' },
+  { num: '05', title: 'Construction & Installation', desc: 'Site levelling, roads, mounting structures, module installation, DC/AC cabling, inverter & transformer installation with safety protocols.', icon: '🏗️' },
+  { num: '06', title: 'Testing & Commissioning', desc: 'String-level testing, inverter load testing, grid synchronisation, relay coordination testing, and final inspection by Electrical Inspector and DISCOM.', icon: '⚡' },
+  { num: '07', title: 'Grid Connection & Handover', desc: 'Grid synchronisation, DISCOM metering, final handover documentation, performance benchmarking, and formal project completion.', icon: '🔌' },
+  { num: '08', title: 'Operations & Maintenance', desc: 'SCADA monitoring, preventive maintenance, fault diagnostics, cleaning schedules, and performance reporting for 25+ year plant life.', icon: '🛡️' },
 ]
 
 const BENEFITS = [
@@ -26,42 +28,40 @@ export default function EPC({ setPage }) {
       {/* What is EPC */}
       <section className="section">
         <div className="container">
-          <div className="grid grid--2" style={{alignItems:'center',gap:48}}>
-            <div className="reveal">
-              <div className="badge badge--blue" style={{marginBottom:16}}>● What is Solar EPC?</div>
-              <h2 style={{fontSize:28,fontWeight:800,marginBottom:16}}>Full Responsibility, Single Contractor</h2>
-              <p style={{color:'var(--n700)',lineHeight:1.85,fontSize:15,marginBottom:12}}>Solar EPC means <strong>Engineering, Procurement, and Construction</strong> — a single company takes full responsibility for designing, supplying, building, and commissioning your solar power project.</p>
-              <p style={{color:'var(--n500)',lineHeight:1.85,fontSize:14,marginBottom:20}}>No multi-vendor coordination needed. The EPC contractor manages the entire process from site assessment to grid synchronisation, delivering a turnkey plant with performance warranties.</p>
-              <div style={{display:'flex',flexWrap:'wrap',gap:8}}>
-                {['System Design','Equipment Procurement','Construction','Grid Sync','Performance Warranty','O&M Support'].map(t => (
-                  <span key={t} style={{padding:'5px 13px',background:'var(--p50)',border:'1px solid var(--p200)',borderRadius:100,color:'var(--p700)',fontSize:12,fontWeight:500}}>{t}</span>
-                ))}
-              </div>
+          <div className="reveal" style={{maxWidth:720,margin:'0 auto',textAlign:'center',marginBottom:40}}>
+            <div className="badge badge--blue" style={{marginBottom:16}}>● What is Solar EPC?</div>
+            <h2 style={{fontSize:28,fontWeight:800,marginBottom:16}}>Full Responsibility, Single Contractor</h2>
+            <p style={{color:'var(--n700)',lineHeight:1.85,fontSize:15,marginBottom:12}}>Solar EPC means <strong>Engineering, Procurement, and Construction</strong> — a single company takes full responsibility for designing, supplying, building, and commissioning your solar power project.</p>
+            <p style={{color:'var(--n500)',lineHeight:1.85,fontSize:14,marginBottom:20}}>No multi-vendor coordination needed. The EPC contractor manages the entire process from site assessment to grid synchronisation, delivering a turnkey plant with performance warranties.</p>
+            <div style={{display:'flex',flexWrap:'wrap',gap:8,justifyContent:'center'}}>
+              {['System Design','Equipment Procurement','Construction','Grid Sync','Performance Warranty','O&M Support'].map(t => (
+                <span key={t} style={{padding:'5px 13px',background:'var(--p50)',border:'1px solid var(--p200)',borderRadius:100,color:'var(--p700)',fontSize:12,fontWeight:500}}>{t}</span>
+              ))}
             </div>
-            <img src="/images/EPC.jpeg" alt="Solar EPC" className="reveal" style={{borderRadius:16,width:'100%',height:340,objectFit:'cover',boxShadow:'var(--shadow-lg)'}} />
           </div>
+          <img src="/images/EPC.jpeg" alt="Solar EPC" className="reveal" style={{borderRadius:16,width:'100%',maxWidth:900,margin:'0 auto',display:'block',objectFit:'cover',boxShadow:'var(--shadow-lg)'}} />
         </div>
       </section>
 
-      {/* 6-Step Process */}
+      {/* 8-Step Process */}
       <section className="section section--light">
         <div className="container">
           <div className="text-center" style={{marginBottom:48}}>
             <div className="badge badge--blue">● How It Works</div>
-            <h2 style={{fontSize:28,fontWeight:800,marginTop:12}}>The 6-Step EPC Process</h2>
+            <h2 style={{fontSize:28,fontWeight:800,marginTop:12}}>The 8-Step EPC Process</h2>
             <p style={{color:'var(--n500)',marginTop:8,maxWidth:520,margin:'8px auto 0'}}>Each stage prepares the ground for the next — skipping any step leads to performance loss.</p>
           </div>
-          <div className="grid grid--3">
+          <div className="grid grid--4">
             {STEPS.map(s => (
-              <div key={s.num} className="card reveal" style={{padding:28}}>
-                <div style={{display:'flex',alignItems:'center',gap:12,marginBottom:14}}>
-                  <div style={{width:40,height:40,borderRadius:10,background:'var(--p50)',border:'1px solid var(--p200)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:18}}>{s.icon}</div>
+              <div key={s.num} className="card reveal" style={{padding:24}}>
+                <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:12}}>
+                  <div style={{width:38,height:38,borderRadius:10,background:'var(--p50)',border:'1px solid var(--p200)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:17}}>{s.icon}</div>
                   <div>
-                    <div style={{fontSize:11,color:'var(--p600)',fontWeight:700,letterSpacing:1}}>STEP {s.num}</div>
-                    <h3 style={{fontSize:15,fontWeight:700}}>{s.title}</h3>
+                    <div style={{fontSize:10,color:'var(--p600)',fontWeight:700,letterSpacing:1}}>STEP {s.num}</div>
+                    <h3 style={{fontSize:14,fontWeight:700}}>{s.title}</h3>
                   </div>
                 </div>
-                <p style={{color:'var(--n500)',fontSize:13,lineHeight:1.75}}>{s.desc}</p>
+                <p style={{color:'var(--n500)',fontSize:12.5,lineHeight:1.75}}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -69,7 +69,7 @@ export default function EPC({ setPage }) {
       </section>
 
       {/* Why EPC */}
-      <section className="section section--light">
+      <section className="section">
         <div className="container">
           <div className="text-center" style={{marginBottom:48}}>
             <div className="badge badge--blue">● Why Choose EPC?</div>

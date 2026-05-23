@@ -42,7 +42,10 @@ const SECTIONS = [
   {
     title: '9. Contact Information',
     content: 'For privacy-related concerns:',
-    list: ['Email: info@poliviumgroup.com', 'Alternate Email: poliviumgroup@gmail.com', 'Website: poliviumgroup.com']
+    links: [
+      { label: 'Email', href: 'mailto:info@poliviumgroup.com', text: 'info@poliviumgroup.com' },
+      { label: 'Website', href: 'https://poliviumgroup.com', text: 'poliviumgroup.com' },
+    ]
   },
 ]
 
@@ -64,6 +67,16 @@ export default function Privacy() {
                   {s.list.map(item => (
                     <li key={item} style={{fontSize:14,color:'var(--n600)',display:'flex',gap:8,alignItems:'flex-start'}}>
                       <span style={{color:'var(--p500)',marginTop:2}}>•</span>{item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {s.links && (
+                <ul style={{marginTop:12,display:'flex',flexDirection:'column',gap:6}}>
+                  {s.links.map(link => (
+                    <li key={link.text} style={{fontSize:14,color:'var(--n600)',display:'flex',gap:8,alignItems:'flex-start'}}>
+                      <span style={{color:'var(--p500)',marginTop:2}}>•</span>
+                      {link.label}: <a href={link.href} target="_blank" rel="noopener noreferrer" style={{color:'var(--p600)',textDecoration:'underline'}}>{link.text}</a>
                     </li>
                   ))}
                 </ul>

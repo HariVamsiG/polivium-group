@@ -6,6 +6,7 @@ const NAV = [
   { label: 'About Us', key: 'about' },
   { label: 'Services', key: 'services', sub: [
     { label: 'All Solutions', key: 'services' },
+    { label: 'Rooftop Solar', key: 'sol_rooftop' },
     { label: 'EPC Services', key: 'epc' },
     { label: 'Financing Models', key: 'financing' },
     { label: 'Operations & Maintenance', key: 'assetmanagement' },

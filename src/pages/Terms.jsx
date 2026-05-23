@@ -41,7 +41,10 @@ const SECTIONS = [
   {
     title: '9. Contact Information',
     content: 'For any legal or business inquiries:',
-    list: ['Email: info@poliviumgroup.com', 'Alternate Email: poliviumgroup@gmail.com', 'Website: poliviumgroup.com']
+    links: [
+      { label: 'Email', href: 'mailto:info@poliviumgroup.com', text: 'info@poliviumgroup.com' },
+      { label: 'Website', href: 'https://poliviumgroup.com', text: 'poliviumgroup.com' },
+    ]
   },
 ]
 
@@ -52,7 +55,7 @@ export default function Terms() {
       <section className="section">
         <div className="container" style={{maxWidth:780}}>
           <div className="reveal" style={{marginBottom:32,paddingBottom:32,borderBottom:'1px solid var(--n200)'}}>
-            <p style={{color:'var(--n700)',lineHeight:1.8,fontSize:15}}>Welcome to <strong>poliviumgroup.com</strong>. By accessing or using this website, you agree to comply with the following Terms & Conditions. If you do not agree with any part of these terms, please discontinue use of the website.</p>
+            <p style={{color:'var(--n700)',lineHeight:1.8,fontSize:15}}>Welcome to <strong>POLIVIUM GROUP Private Limited</strong>. By accessing or using this website, you agree to comply with the following Terms & Conditions. If you do not agree with any part of these terms, please discontinue use of the website.</p>
           </div>
           {SECTIONS.map((s, i) => (
             <div key={i} className="reveal" style={{marginBottom:32,paddingBottom:32,borderBottom:'1px solid var(--n200)'}}>
@@ -63,6 +66,16 @@ export default function Terms() {
                   {s.list.map(item => (
                     <li key={item} style={{fontSize:14,color:'var(--n600)',display:'flex',gap:8,alignItems:'flex-start'}}>
                       <span style={{color:'var(--p500)',marginTop:2}}>•</span>{item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {s.links && (
+                <ul style={{marginTop:12,display:'flex',flexDirection:'column',gap:6}}>
+                  {s.links.map(link => (
+                    <li key={link.text} style={{fontSize:14,color:'var(--n600)',display:'flex',gap:8,alignItems:'flex-start'}}>
+                      <span style={{color:'var(--p500)',marginTop:2}}>•</span>
+                      {link.label}: <a href={link.href} target="_blank" rel="noopener noreferrer" style={{color:'var(--p600)',textDecoration:'underline'}}>{link.text}</a>
                     </li>
                   ))}
                 </ul>

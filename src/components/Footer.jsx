@@ -33,7 +33,7 @@ export default function Footer({ setPage }) {
         </div>
       </div>
       <div className={s.bottom}>
-        <p>© 2026 Polivium Group Private Limited. All Rights Reserved.</p>
+        <p>© 2026 Polivium Group Private Limited. All Rights Reserved. Building Sustainable Infrastructure for a Smarter Tomorrow</p>
         <div className={s.legal}>
           <button onClick={()=>setPage('terms')}>Terms</button>
           <button onClick={()=>setPage('privacy')}>Privacy</button>
