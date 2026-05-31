@@ -10,13 +10,13 @@ const VIDEOS = [
 ]
 
 const SOLUTIONS = [
-  { key:'sol_rooftop', title:'Rooftop Solar', desc:'Commercial & industrial rooftop installations from 25 kW to 5 MW.', img:'/images/Rooftop_Solar.jpg' },
-  { key:'sol_ground', title:'Ground Mounted Solar', desc:'Large-scale ground-mount solar farms for captive consumption.', img:'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&q=80' },
+  { key:'sol_rooftop', title:'Rooftop Solar', desc:'Commercial & industrial rooftop installations from 25 kW to 5 MW.', img:'/images/Rooftop_Solar.jpeg' },
+  { key:'sol_ground', title:'Ground Mounted Solar', desc:'Large-scale ground-mount solar farms for captive consumption.', img:'/images/Ground-Solar.jpeg' },
   { key:'sol_park', title:'Solar Park', desc:'Utility-scale solar parks from 5 MW to 100MW+ for PSUs and IPPs.', img:'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=500&q=80' },
   { key:'sol_bess', title:'Battery Energy Storage', desc:'Grid-scale BESS for peak shaving and energy arbitrage.', img:'/images/BESS.jpeg' },
   { key:'sol_floating', title:'Floating Solar', desc:'FPV systems for reservoirs and water bodies.', img:'/images/Floating_Solar.jpg' },
   { key:'sol_carport', title:'Solar Carport', desc:'Solar-powered parking structures for campuses.', img:'/images/Solar_Carport.jpg' },
-  { key:'sol_hybrid', title:'Hybrid Solar & Wind', desc:'Combined systems for 24/7 renewable generation.', img:'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=500&q=80' },
+  { key:'sol_hybrid', title:'Hybrid Solar & Wind', desc:'Combined systems for 24/7 renewable generation.', img: '/images/Hybrid-Solar-Wind.jpeg'},
   { key:'sol_substation', title:'Sub-Stations', desc:'Switchyards and substations up to 400 kV.', img:'/images/Substation.jpg' },
   { key:'sol_wind', title:'Wind Turbine', desc:'Onshore wind energy projects end-to-end.', img:'/images/Wind-Turbines.jpg' },
 ]

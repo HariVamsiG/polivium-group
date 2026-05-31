@@ -1,13 +1,13 @@
 import PageHeader from '../components/PageHeader'
 
 const SOLUTIONS = [
-  { key:'sol_rooftop', title:'Rooftop Solar', desc:'Commercial & industrial rooftop installations from 25 kW to 5 MW. Net metering enabled.', img:'/images/Rooftop_Solar.jpg' },
-  { key:'sol_ground', title:'Ground Mounted Solar', desc:'Large-scale ground-mount solar farms for captive consumption and open access.', img:'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&q=80' },
+  { key:'sol_rooftop', title:'Rooftop Solar', desc:'Commercial & industrial rooftop installations from 25 kW to 5 MW. Net metering enabled.', img:'/images/Rooftop_Solar.jpeg' },
+  { key:'sol_ground', title:'Ground Mounted Solar', desc:'Large-scale ground-mount solar farms for captive consumption and open access.', img:'/images/Ground-Solar.jpeg' },
   { key:'sol_park', title:'Solar Park', desc:'Utility-scale solar parks from 5 MW to 100MW+ for PSUs and IPPs.', img:'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=500&q=80' },
   { key:'sol_bess', title:'Battery Energy Storage', desc:'Grid-scale BESS for peak shaving, frequency regulation, and energy arbitrage.', img:'/images/BESS.jpeg' },
   { key:'sol_floating', title:'Floating Solar Panels', desc:'Innovative FPV systems for reservoirs, ponds, and water bodies. Reduces evaporation by 70%.', img:'/images/Floating_Solar.jpg' },
   { key:'sol_carport', title:'Solar Carport', desc:'Solar-powered parking structures for commercial complexes, malls, and campuses.', img:'/images/Solar_Carport.jpg' },
-  { key:'sol_hybrid', title:'Hybrid Solar & Wind', desc:'Combined solar-wind hybrid systems for 24/7 renewable energy generation.', img:'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=500&q=80' },
+  { key:'sol_hybrid', title:'Hybrid Solar & Wind', desc:'Combined solar-wind hybrid systems for 24/7 renewable energy generation.', img:'/images/Hybrid-Solar-Wind.jpeg' },
   { key:'sol_substation', title:'Sub-Stations', desc:'EPC of switchyards and substations up to 400/220/132 kV for grid infrastructure.', img:'/images/Substation.jpg' },
   { key:'sol_wind', title:'Wind Turbine', desc:'Onshore wind energy projects — site assessment, procurement, and installation.', img:'/images/Wind-Turbines.jpg' },
 ]

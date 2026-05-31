@@ -1,13 +1,13 @@
 import PageHeader from '../components/PageHeader'
 
 const DATA = {
-  sol_rooftop: { title:'Rooftop Solar', sub:'Commercial & Industrial', img:'/images/Rooftop_Solar.jpg', tagline:'Turn your roof into a power plant',
+  sol_rooftop: { title:'Rooftop Solar', sub:'Commercial & Industrial', img:'/images/Rooftop_Solar.jpeg', tagline:'Turn your roof into a power plant',
     intro:'Turning to green energy and reducing carbon footprint got a lot easier with rooftop solar. Commercial and industrial bodies are increasingly choosing solar energy over conventional energy sources.',
     body:'Adopting solar power significantly reduces energy costs and can even earn profit from excess energy sold back to the grid. With Polivium, you can ensure you have chosen the best commercial or industrial solar installation partner.',
     body2:'We handle everything from feasibility studies, structural analysis, system design, procurement, installation, and performance monitoring.',
     stats:[['70%','Bill Reduction'],['25 Yrs','System Life'],['3–5 Yrs','Payback Period']],
     benefits:['Lower industrial & commercial electricity tariffs','Transform underutilised rooftop space','Grid support and net-metering income','Energy independence from utility rate hikes','Reduce carbon footprint significantly','Government subsidy for residential'] },
-  sol_ground: { title:'Ground Mounted Solar', sub:'Large Scale Arrays', img:'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80', tagline:'Scalable solar for any land size',
+  sol_ground: { title:'Ground Mounted Solar', sub:'Large Scale Arrays', img:'/images/Ground-Solar.jpeg', tagline:'Scalable solar for any land size',
     intro:'Polivium enables businesses looking to save electricity costs and switch to solar power with comprehensive ground-mounted solar solutions for any scale of deployment.',
     body:'Ground-mounted solar systems are ideal for large commercial or industrial premises with available land. These systems can be optimally tilted and oriented for maximum energy generation.',
     body2:'Our solutions include single-axis and dual-axis trackers for maximum yield, fixed-tilt systems for cost efficiency, and agrivoltaic designs combining farming and solar generation.',
@@ -37,7 +37,7 @@ const DATA = {
     body2:'Our carport structures are engineered for wind and seismic loads, designed to accommodate EV charging stations, and can be combined with battery storage for peak-shaving.',
     stats:[['25 kW–5 MW','Capacity Range'],['EV Ready','Charging Integration'],['30%','Shading Benefit']],
     benefits:['Dual use — parking + power generation','Vehicle shade reduces heat damage','EV charging integration ready','No additional land required','Aesthetic premium design options'] },
-  sol_hybrid: { title:'Hybrid Solar & Wind', sub:'Combined Renewable Systems', img:'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=900&q=80', tagline:'Best of both renewable worlds',
+  sol_hybrid: { title:'Hybrid Solar & Wind', sub:'Combined Renewable Systems', img:'/images/Hybrid-Solar-Wind.jpeg', tagline:'Best of both renewable worlds',
     intro:'Hybrid systems ensure uninterrupted power through intelligent management of multiple renewable sources and instant changeover capabilities.',
     body:'Combined solar-wind systems maximise land utilization and provide more consistent power generation throughout the day with complementary generation profiles.',
     body2:'Our controllers automatically adjust power references, rotate gensets for fuel-optimised running, and facilitate energy storage for peak shaving and load sharing.',
