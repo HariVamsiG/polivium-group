@@ -22,7 +22,7 @@ const SERVICES_LIST = [
 export default function Services({ setPage }) {
   return (
     <>
-      <PageHeader badge="What We Do" title="Our Solutions & Services" subtitle="Leaders in renewable energy services across India — from rooftop to utility-scale." />
+      <PageHeader badge="What We Do" title="Our Solutions & Services" subtitle="End-to-end renewable energy services across India — from rooftop to utility-scale." />
 
       {/* Solutions Grid */}
       <section className="section">

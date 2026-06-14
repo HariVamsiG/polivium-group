@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import s from './Home.module.css'
 
 const VIDEOS = [
@@ -30,7 +30,9 @@ const SERVICES = [
 
 export default function Home({ setPage }) {
   const [vidIdx, setVidIdx] = useState(0)
+  const [videoReady, setVideoReady] = useState(false)
   const [hoveredSol, setHoveredSol] = useState(null)
+  const videoRefs = useRef([])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -45,12 +47,26 @@ export default function Home({ setPage }) {
     const img2 = new Image(); img2.src = '/images/logo.png'
   }, [])
 
+  const handleVideoCanPlay = () => {
+    if (!videoReady) setVideoReady(true)
+  }
+
   return (
     <>
       {/* Hero */}
       <section className={s.hero}>
+        <div className={s.heroBg} />
         {VIDEOS.map((v, i) => (
-          <video key={i} className={`${s.heroVideo} ${i === vidIdx ? s.videoActive : ''}`} muted autoPlay playsInline loop>
+          <video
+            key={i}
+            ref={el => videoRefs.current[i] = el}
+            className={`${s.heroVideo} ${i === vidIdx && videoReady ? s.videoActive : ''}`}
+            muted
+            autoPlay
+            playsInline
+            loop
+            onCanPlay={handleVideoCanPlay}
+          >
             <source src={v} type="video/mp4" />
           </video>
         ))}

@@ -37,7 +37,7 @@ export default function Contact() {
               <div className="card" style={{padding:32}}>
                 <h3 style={{fontSize:18,fontWeight:700,marginBottom:16}}>Contact Information</h3>
                 <div style={{display:'flex',flexDirection:'column',gap:14,color:'var(--n500)',fontSize:14}}>
-                  <p>📧 info@poliviumgroup.com</p><p>📞 +91 755 017 0694</p><p>📍 <a href="https://maps.app.goo.gl/kTJDbW1cpNns3NQdA?g_st=aw" target="_blank" rel="noopener noreferrer" style={{color:'inherit'}}>Hyderabad, Telangana, India</a></p>
+                  <p>📧 info@poliviumgroup.com</p><p>📞 +91 755 017 0694</p><p>📍 <a href="https://maps.app.goo.gl/kTJDbW1cpNns3NQdA?g_st=aw" target="_blank" rel="noopener noreferrer" style={{color:'inherit'}}>Ongole, India</a></p>
                 </div>
               </div>
               <div className="card" style={{padding:32}}>
