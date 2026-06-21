@@ -7,7 +7,7 @@ export default function Initiatives({ setPage }) {
       <section className="section">
         <div className="container" style={{maxWidth:700}}>
           <div className="card reveal" style={{cursor:'pointer',overflow:'hidden'}} onClick={() => setPage('ni_cbg')}>
-            <img src="/images/Bio-CNG.jpeg" alt="CBG" style={{height:280,width:'100%',objectFit:'cover'}} />
+            <img src="/images/Bio-CNG.jpeg" alt="CBG" style={{height:280,width:'100%',objectFit:'fit'}} />
             <div style={{padding:36}}>
               <h2 style={{fontSize:28,fontWeight:800}}>CBG (Bio-CNG) Plants</h2>
               <p style={{color:'var(--n500)',marginTop:12,lineHeight:1.7,fontSize:15}}>Compressed Biogas production from organic waste — sustainable bio-energy solutions across India. Partner with us to set up CBG manufacturing plants.</p>

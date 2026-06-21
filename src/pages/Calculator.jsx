@@ -28,8 +28,8 @@ export default function Calculator() {
     const area = Math.round(kw * 80)
     const base = Math.round(kw * (type === 'home' ? 70000 : 40000))
     const subsidy = type === 'home'
-      ? kw <= 1 ? 30000
-        : kw <= 2 ? 60000
+      ? kw <= 2 ? 30000
+        : kw <= 3 ? 60000
         : 78000
       : 0
     const eff = Math.max(0, base - subsidy)
